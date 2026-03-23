@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/Users/tinnodjtk/Desktop/GodisWatching/main.py", line 78, in <module>
+    main()
+    ~~~~^^
+  File "/Users/tinnodjtk/Desktop/GodisWatching/main.py", line 48, in main
+    result = analyze_image_ollama(
+             ~~~~~~~~~~~~~~~~~~~~^
+        image_bytes=image_bytes,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        prompt=prompt,
+        ^^^^^^^^^^^^^^
+    ).strip().upper()
+    ^
+  File "/Users/tinnodjtk/Desktop/GodisWatching/godis_api.py", line 86, in analyze_image_ollama
+    response = client.generate(model=model, prompt=prompt, images=[image_bytes])
+  File "/Users/tinnodjtk/Desktop/GodisWatching/.venv/lib/python3.14/site-packages/ollama/_client.py", line 262, in generate
+    return self._request(
+           ~~~~~~~~~~~~~^
+      GenerateResponse,
+      ^^^^^^^^^^^^^^^^^
+    ...<19 lines>...
+      stream=stream,
+      ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/tinnodjtk/Desktop/GodisWatching/.venv/lib/python3.14/site-packages/ollama/_client.py", line 189, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/tinnodjtk/Desktop/GodisWatching/.venv/lib/python3.14/site-packages/ollama/_client.py", line 135, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
